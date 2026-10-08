@@ -739,14 +739,9 @@ img, svg { max-width: 100%; }
 .ci-value { overflow-wrap: anywhere; }
 
 @media (max-width: 900px) {
-  #hero { grid-template-columns: minmax(0, 1fr); }
-  .contact-section-inner { grid-template-columns: minmax(0, 1fr); }
-  #skills .skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-
- .hero-name {
-    font-size: min(calc((100vw - 48px) / 8), 72px);
-    white-space: nowrap;
-  }
+  .hero-name {
+    font-size: min(calc((100vw - 48px) / 7.5), 72px);
+    white-space: nowrap; }
 
   .section-num { padding: 20px 16px; }
   .section-title { padding: 20px 24px; }
