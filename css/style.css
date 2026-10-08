@@ -721,3 +721,37 @@ footer {
   .timeline-date { padding-top: 0; }
 }
 
+/* ── FIX OVERFLOW ORIZZONTALE MOBILE ── */
+html, body { overflow-x: hidden; max-width: 100%; }
+img, svg { max-width: 100%; }
+
+/* le colonne grid possono restringersi sotto il min-content */
+#hero,
+.contact-section-inner { grid-template-columns: minmax(0, 1fr); }
+.hero-left, .hero-right,
+.contact-left, .contact-right { min-width: 0; }
+
+/* griglia skills: mai più larga del contenitore */
+#skills .skills-grid {
+  grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+}
+
+.hero-name,
+.ci-value { overflow-wrap: anywhere; }
+
+@media (max-width: 900px) {
+  #hero { grid-template-columns: minmax(0, 1fr); }
+  .contact-section-inner { grid-template-columns: minmax(0, 1fr); }
+  #skills .skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+  .hero-name { font-size: clamp(40px, 13vw, 72px); }
+
+  .section-num { padding: 20px 16px; }
+  .section-title { padding: 20px 24px; }
+  #percorso .timeline { padding: 40px 24px; }
+  .hero-desc { max-width: 100%; }
+}
+
+@media (max-width: 600px) {
+  #skills .skills-grid { grid-template-columns: minmax(0, 1fr); }
+}
