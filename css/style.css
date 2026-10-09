@@ -727,7 +727,7 @@ img, svg { max-width: 100%; }
 
 /* le colonne grid possono restringersi sotto il min-content */
 #hero,
-.contact-section-inner { grid-template-columns: minmax(0, 1fr); }
+.contact-section-inner { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .hero-left, .hero-right,
 .contact-left, .contact-right { min-width: 0; }
 
@@ -739,6 +739,9 @@ img, svg { max-width: 100%; }
 .ci-value { overflow-wrap: anywhere; }
 
 @media (max-width: 900px) {
+  #hero,
+  .contact-section-inner { grid-template-columns: 1fr; }
+
   .hero-name {
     font-size: min(calc((100vw - 48px) / 7.5), 72px);
     white-space: nowrap; }
